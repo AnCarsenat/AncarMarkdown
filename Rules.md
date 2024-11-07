@@ -2,9 +2,10 @@
 
 
 ## Headings
-Expandable
-Six levels of headings : 1-6
-Follows basic markdown syntax as follows :
+Expandable  
+
+Six levels of headings : 1-6  
+Follows basic markdown syntax as follows :  
 
 |Syntax|Heading size|
 |---|---|
@@ -12,11 +13,11 @@ Follows basic markdown syntax as follows :
 |##|2|
 |###...|...|
 
-## Text styling
-Expandable
-Many stylings
+## Text quick styling
+Expandable  
+Many stylings  
 
-Default syntax
+Default syntax :  
 |Syntax|Heading size|
 |---|---|
 |\~~string~~|~~string~~|
@@ -49,12 +50,15 @@ Set alignment with colons ":"
 | Text      | Text   | Text  |
 
 # Custom markdown functions
+Non-expandable  
+Markdown function
+
 Custom markdown functions are called with
 :md:(arg1,arg2,arg3,...) 
 
 ## Groupings
-Non-expandable
-Markdown function
+Non-expandable  
+Markdown function  
 
 Groupings are defined with :md_grouping:(id,start/end)
 ```markdown
@@ -65,6 +69,9 @@ Hello there, from the grouping
 ```
 
 ## Custom styling
+Non-expandable  
+Markdown function
+
 You can use the ":md_style:" functions to add styling to some elements
 First create/load a style :
 :md_style_create:(start/end,style_id)
@@ -91,11 +98,43 @@ property2:value2,
 ```
 
 You can then reference styles by id/ add them afterward
+
+Then add styles :
 :md_style_add:(id/class,style_id)
+```markdown
+
+# Heading one
+:md_tag:(tag_heading)
+
+:md_style_create:(start,style_heading)
+color:red;
+:md_style_create:(end,style_heading)
+
+:md_style_add:(tag_heading,style_heading)
+
+```
+
 
 ## Tagging
+Non-expandable  
+Markdown function  
+
 You can tag recently created elements adding a " class="" "
 inside of their html
+
+:md_tag:(element_id)
+```
+Tagging an element
+# Heading one
+:md_tag:(heading)
+
+you can now reference it in other functions
+
+
+
+```
+
+
 
 
 
