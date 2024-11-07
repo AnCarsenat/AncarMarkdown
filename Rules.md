@@ -11,8 +11,8 @@
 
 ---
 
-## Headings {#headings}
-**Expandable**  
+## Headings 🔹
+**Expandable**    
 Supports six levels of headings from 1 to 6. Follow the syntax below:
 
 | Syntax | Heading Size |
