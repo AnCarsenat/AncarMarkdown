@@ -1,6 +1,5 @@
 # ANCAR-MARKDOWN -- RULES
 
-
 ## Headings
 Expandable  
 
