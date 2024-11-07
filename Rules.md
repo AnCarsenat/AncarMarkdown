@@ -1,142 +1,134 @@
-# ANCAR-MARKDOWN -- RULES
+# ANCAR-MARKDOWN -- RULES 📑
 
-## Headings
-Expandable  
+### 📜 Index
+1. [Headings](#headings)
+2. [Text Quick Styling](#text-quick-styling)
+3. [Tables](#tables)
+4. [Custom Markdown Functions](#custom-markdown-functions)
+5. [Groupings](#groupings)
+6. [Custom Styling](#custom-styling)
+7. [Tagging](#tagging)
 
-Six levels of headings : 1-6  
-Follows basic markdown syntax as follows :  
+---
 
-|Syntax|Heading size|
-|---|---|
-|#|1|
-|##|2|
-|###...|...|
+## Headings 🔹
+**Expandable**  
+Supports six levels of headings from 1 to 6. Follow the syntax below:
 
-## Text quick styling
-Expandable  
-Many stylings  
+| Syntax | Heading Size |
+|--------|--------------|
+| `#`    | 1           |
+| `##`   | 2           |
+| `###...` | ...      |
 
-Default syntax :  
-|Syntax|Heading size|
-|---|---|
-|\~~string~~|~~string~~|
-|\*string*|*string*|
-|\*\*string**|**string**|
-|...|...|
+## Text Quick Styling ✍️
+**Expandable**  
+Multiple text styling options with the following default syntax:
 
-## Tables
-Non-expandable
+| Syntax           | Result          |
+|------------------|-----------------|
+| `~~text~~`       | ~~text~~        |
+| `*text*`         | *text*          |
+| `**text**`       | **text**        |
+| ...              | ...             |
 
-```markdown
+## Tables 📊
+**Non-expandable**
+
+```
 | Syntax      | Description |
 | ----------- | ----------- |
 | Header      | Title       |
 | Paragraph   | Text        |
 ```
+
 | Syntax      | Description |
 | ----------- | ----------- |
 | Header      | Title       |
 | Paragraph   | Text        |
 
-Set alignment with colons ":"
-```markdown
-| Left      | Middle | Right |
-| :--- | :---: | ---: |
-| Text      | Text   | Text  |
+To set alignment with colons ":" use the syntax below:
+
 ```
 | Left      | Middle | Right |
-| :--- | :---: | ---: |
+| :---      | :---:  | ---:  |
+| Text      | Text   | Text  |
+```
+
+| Left      | Middle | Right |
+| :---      | :---:  | ---:  |
 | Text      | Text   | Text  |
 
-# Custom markdown functions
-Non-expandable  
-Markdown function
+## Custom Markdown Functions ⚙️
+**Non-expandable**  
 
-Custom markdown functions are called with
-:md:(arg1,arg2,arg3,...) 
+Custom markdown functions are called with `:md:(arg1,arg2,arg3,...)`
 
-## Groupings
-Non-expandable  
-Markdown function  
+---
 
-Groupings are defined with :md_grouping:(id,start/end)
-```markdown
-Hi, I am not inside the grouping
-:md_grouping:("Box","start")
-Hello there, from the grouping
-:md_grouping:("Box","end")
-```
-
-## Custom styling
-Non-expandable  
-Markdown function
-
-You can use the ":md_style:" functions to add styling to some elements
-First create/load a style :
-:md_style_create:(start/end,style_id)
-
-:md_style_define:(start/end,style_id)
-:md_style_load:(file,style_id)
-```
-Creating a style
-:md_style_create:(start,my_custom_style_1)
-property1:value1;
-property2:value2,
-:md_style_create:(end,my_custom_style_1)
-
-Loading a style
-:md_style_load:(file,style_id)
-property1:value1;
-property2:value2,
-
-Defining a style
-:md_style_define:(start,custom_styles)
-property1:value1;
-property2:value2,
-:md_style_define:(end,custom_styles)
-```
-
-You can then reference styles by id/ add them afterward
-
-Then add styles :
-:md_style_add:(id/class,style_id)
-```markdown
-
-# Heading one
-:md_tag:(tag_heading)
-
-:md_style_create:(start,style_heading)
-color:red;
-:md_style_create:(end,style_heading)
-
-:md_style_add:(tag_heading,style_heading)
+## Groupings 📦
+**Non-expandable**  
+Markdown function for grouping text or elements. Use `:md_grouping:(id,start/end)` for grouping:
 
 ```
-
-
-## Tagging
-Non-expandable  
-Markdown function  
-
-You can tag recently created elements adding a " class="" "
-inside of their html
-
-:md_tag:(element_id)
-```
-Tagging an element
-# Heading one
-:md_tag:(heading)
-
-you can now reference it in other functions
-
-
-
+Hi, I am not inside the grouping  
+:md_grouping:("Box","start")  
+Hello there, from the grouping  
+:md_grouping:("Box","end")  
 ```
 
+---
 
+## Custom Styling 🎨
+**Non-expandable**  
+Use `:md_style:` functions to add styling to elements. To define, create, or load a style, use the following format:
 
+```
+Creating a style  
+:md_style_create:(start,my_custom_style_1)  
+property1:value1;  
+property2:value2;  
+:md_style_create:(end,my_custom_style_1)  
 
+Loading a style  
+:md_style_load:(file,style_id)  
+property1:value1;  
+property2:value2;  
 
+Defining a style  
+:md_style_define:(start,custom_styles)  
+property1:value1;  
+property2:value2;  
+:md_style_define:(end,custom_styles)  
+```
 
+Once defined, reference styles by id or add them later:
 
+```
+# Heading one  
+:md_tag:(tag_heading)  
 
+:md_style_create:(start,style_heading)  
+color:red;  
+:md_style_create:(end,style_heading)  
+
+:md_style_add:(tag_heading,style_heading)  
+```
+
+---
+
+## Tagging 📌
+**Non-expandable**  
+Use the `:md_tag:` function to add a "class" attribute to an element:
+
+```
+Tagging an element  
+# Heading one  
+:md_tag:(heading)  
+
+You can now reference it in other functions  
+```
+
+--- 
+
+This readme covers essential guidelines and advanced customization for using the ANCAR-MARKDOWN syntax.
